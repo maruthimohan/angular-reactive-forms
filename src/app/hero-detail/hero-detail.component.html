@@ -3,14 +3,17 @@
         <h2>Hero Detail</h2>
     </div>
     <div style="font-family: roboto; font-weight: 300;">Editing: {{hero.name}}</div>
-    <form class="example-form" [formGroup]="heroForm">
+    <form class="example-form" [formGroup]="heroForm" (ngSubmit)="onSubmit()">
         <mat-form-field class="example-full-width">
             <input matInput placeholder="Hero Name" formControlName="name">
         </mat-form-field>
         <div formArrayName="secretLairs">
             <div class="secret-lairs">
                 <div *ngFor="let addressGP of secretLairs.controls; let i = index" [formGroupName]="i">
-                    <p class="address-header">Address {{i+1}} </p> <mat-icon class="delete-lair" (click)="removeLair(i)">delete</mat-icon>
+                    <p class="address-header">Address {{i+1}} </p>
+                    <button mat-icon-button (click)="removeLair(i)" class="delete-lair">
+                        <mat-icon>delete</mat-icon>
+                    </button>
                     <div style="margin-left: 2rem; font-size: 13px;">
                         <mat-form-field class="example-full-width">
                             <input matInput placeholder="Street" formControlName="street">
@@ -33,6 +36,7 @@
                 </div>
             </div>
 
+            <button class="add-secret-lair-button" type="button" (click)="addLair()" mat-stroked-button>Add a Secret Lair</button>
         </div>
 
         <mat-form-field class="example-full-width">
@@ -43,7 +47,13 @@
         </mat-form-field>
 
         <div class="hero-detail-actions">
-            <button class="refresh-button" (click)="addLair()" mat-raised-button color="primary">Add a Secret Lair</button>
+            <button class="save-button" [disabled]="heroForm.pristine" type="submit" mat-raised-button color="primary">Save</button>
+            <button class="revert-button" [disabled]="heroForm.pristine" (click)="revert()" mat-raised-button color="warn">Revert</button>
+        </div>
+
+        <div style="display: none;">
+            <h4>Name change log:</h4>
+            <p *ngFor="let name of nameChangeLog">{{name}}</p>
         </div>
 
 

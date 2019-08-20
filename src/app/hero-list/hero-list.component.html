@@ -1,9 +1,11 @@
 <mat-card>
-    <h3 *ngIf="isLoading"><i>Loading heroes ... </i></h3>
-    <h3 *ngIf="!isLoading">Select a hero:</h3>
 
     <div class="hero-list-section">
-        <button class="refresh-button" (click)="getHeroes()" mat-raised-button>Refresh</button>
+        <button class="refresh-button" (click)="getHeroes()" mat-raised-button color="primary">Refresh Heroes</button>
+        <div class="loading-text">
+            <p *ngIf="isLoading">Loading heroes ... </p>
+            <p *ngIf="!isLoading">Select a hero:</p>
+        </div>
         <mat-nav-list [ngClass]="{'hero-list': true}">
             <a mat-list-item (click)="select(hero)" *ngFor="let hero of heroes | async"> {{ hero.name }} </a>
         </mat-nav-list>
