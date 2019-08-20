@@ -1,8 +1,8 @@
 <mat-card>
     <div>
-        <h2>Hero Detail</h2>
+        <h2 style="color: #004c8c;">Hero Detail</h2>
     </div>
-    <div style="font-family: roboto; font-weight: 300;">Editing: {{hero.name}}</div>
+    <div style="font-family: roboto, serif; font-weight: 300; color: #004c8c;">Editing: <span style="font-weight: 700;">{{hero.name}}</span></div>
     <form class="example-form" [formGroup]="heroForm" (ngSubmit)="onSubmit()">
         <mat-form-field class="example-full-width">
             <input matInput placeholder="Hero Name" formControlName="name">

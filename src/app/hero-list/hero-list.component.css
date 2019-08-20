@@ -1,3 +1,15 @@
+/* Block level theme styles */
+:root {
+    --primary: #0277bd;
+    --primary-font: #ffffff;
+    --primary-dark: #004c8c;
+    --primary-dark-font: #ffffff;
+    --primary-light: #58a5f0;
+    --primary-light-color: #000000;
+}
+
+
+
 mat-card {
     position: absolute;
     margin: 10px 10px;
@@ -13,7 +25,8 @@ mat-card {
     height: 100%;
     float: left;
     width: 20%;
-    background: rgb(179, 179, 179);
+    background: #0277bd;
+    color: #FFFFFF;
     overflow: scroll;
 }
 
@@ -22,26 +35,63 @@ mat-card {
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
+    background-color: #004c8c;
+    color: #FFFFFF;
 }
 
 .hero-list {
     position: relative;
+    background: #0277bd;
+    color: white;
     /* top: 50px; */
 }
 
+.hero-list a {
+    background: #0277bd;
+    color: white;
+    transition: 0.2s all ease-in-out;
+}
+
+.hero-list a:hover, .hero-list a:active, .hero-list a:focus {
+    background: #004c8c;
+    color: #FFFFFF;
+}
+
+.hero-list a.active-link {
+    background: #004c8c;
+    color: #FFFFFF;
+}
+
 .hero-detail-section {
+    box-sizing: border-box;
     display: block;
     float: left;
     width: 80%;
     height: 100%;
-    background: rgba(175, 174, 174, 0.3);
+    background: #ffffff;
     overflow: scroll;
+    border: 1px solid #004c8c;
 }
 
 .loading-text {
     font-size: 18px;
     font-weight: 300;
     padding: 10px;
+    color: white;
+}
+
+.else-block {
+    height: 150px;
+    width: 500px;
+    color: #004c8c;
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    font-weight: 700;
+    position: relative;
+    /*background-color: rgb(245, 245, 247);*/
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-250px, -75px, 0);
 }
 
 .clear-fix {
