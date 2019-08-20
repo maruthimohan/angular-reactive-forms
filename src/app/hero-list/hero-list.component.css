@@ -1,0 +1,49 @@
+mat-card {
+    position: absolute;
+    margin: 10px 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
+.hero-list-section {
+    display: block;
+    height: 100%;
+    float: left;
+    width: 20%;
+    background: rgb(179, 179, 179);
+    overflow: scroll;
+}
+
+.refresh-button {
+    position: relative;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hero-list {
+    position: relative;
+    /* top: 50px; */
+}
+
+.hero-detail-section {
+    display: block;
+    float: left;
+    width: 80%;
+    height: 100%;
+    background: rgba(175, 174, 174, 0.3);
+    overflow: scroll;
+}
+
+.loading-text {
+    font-size: 18px;
+    font-weight: 300;
+    padding: 10px;
+}
+
+.clear-fix {
+    clear: both;
+}
