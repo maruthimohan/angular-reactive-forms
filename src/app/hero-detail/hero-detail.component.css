@@ -1,0 +1,42 @@
+mat-card {
+    width: 80%;
+    margin: 20px auto;
+    background-color: rgb(175, 174, 174, 0.3);
+}
+
+mat-form-field {
+    display: block;
+    margin: 5px auto;
+    width: 400px;
+}
+
+.address-header {
+    display: inline-block;
+    position: relative;
+    left: 20%;
+    font-weight: 500;
+    line-height: 24px;
+    vertical-align: middle;
+}
+
+.delete-lair {
+    vertical-align: middle;
+    position: relative;
+    left: 22%;
+    color: rgb(107, 4, 4);
+    cursor: pointer;
+    transition: 0.25s all ease-in-out;
+}
+
+.delete-lair:hover {
+    color: rgb(187, 7, 7);
+    cursor: pointer;
+}
+
+.code-block {
+    background: rgb(83, 83, 85);
+    color: rgb(255, 255, 255);
+    max-width: 100%;
+    padding: 10px;
+    font-size: 12px;
+}

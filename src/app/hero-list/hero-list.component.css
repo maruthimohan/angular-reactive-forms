@@ -1,0 +1,42 @@
+mat-card {
+    position: absolute;
+    margin: 10px 10px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+
+}
+
+.hero-list-section {
+    display: block;
+    height: 95%;
+    float: left;
+    width: 20%;
+    background: rgb(179, 179, 179);
+}
+
+.refresh-button {
+    position: relative;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hero-list {
+    position: relative;
+    top: 50px;
+}
+
+.hero-detail-section {
+    display: block;
+    float: left;
+    width: 80%;
+    height: 95%;
+    background: rgb(175, 174, 174, 0.3);
+    overflow: scroll;
+}
+
+.clear-fix {
+    clear: both;
+}

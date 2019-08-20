@@ -1,0 +1,56 @@
+<mat-card>
+    <div>
+        <h2>Hero Detail</h2>
+    </div>
+    <div style="font-family: roboto; font-weight: 300;">Editing: {{hero.name}}</div>
+    <form class="example-form" [formGroup]="heroForm">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Hero Name" formControlName="name">
+        </mat-form-field>
+        <div formArrayName="secretLairs">
+            <div class="secret-lairs">
+                <div *ngFor="let addressGP of secretLairs.controls; let i = index" [formGroupName]="i">
+                    <p class="address-header">Address {{i+1}} </p> <mat-icon class="delete-lair" (click)="removeLair(i)">delete</mat-icon>
+                    <div style="margin-left: 2rem; font-size: 13px;">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Street" formControlName="street">
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="City" formControlName="city">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>State</mat-label>
+                            <mat-select formControlName="state">
+                                <mat-option *ngFor="let state of states" [value]="state">
+                                {{state}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Zip Code" formControlName="zip">
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Super Power" formControlName="superpower">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Sidekick" formControlName="sidekick">
+        </mat-form-field>
+
+        <div class="hero-detail-actions">
+            <button class="refresh-button" (click)="addLair()" mat-raised-button color="primary">Add a Secret Lair</button>
+        </div>
+
+
+        <!-- <div [ngClass]="{'code-block': true}">
+            <p>{{heroForm.value | json}}</p>
+            <p>Form Status: {{heroForm.status | json}}</p>
+            <p>Hero name: {{heroForm.get('name').value}}</p>
+        </div> -->
+    </form>
+</mat-card>
